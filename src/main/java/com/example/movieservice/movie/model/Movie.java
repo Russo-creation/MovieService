@@ -1,4 +1,4 @@
-package com.example.movieservice.movie;
+package com.example.movieservice.movie.model;
 
 public class Movie {
     private Long ID;
