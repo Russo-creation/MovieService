@@ -3,7 +3,13 @@ package com.example.movieservice.movie;
 public class Movie {
     private Long ID;
     private String name;
-    private String category;
+    private MovieEnum category;
+
+    public Movie(Long ID, String name, MovieEnum category) {
+        this.ID = ID;
+        this.name = name;
+        this.category = category;
+    }
 
     public Movie() {
     }
@@ -24,11 +30,4 @@ public class Movie {
         this.name = name;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
 }
