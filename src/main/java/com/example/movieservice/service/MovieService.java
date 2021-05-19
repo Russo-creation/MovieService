@@ -1,7 +1,7 @@
-package com.example.movieservice.movie.service;
+package com.example.movieservice.service;
 
-import com.example.movieservice.movie.model.Movie;
-import com.example.movieservice.movie.model.MovieEnumCategory;
+import com.example.movieservice.model.Movie;
+import com.example.movieservice.model.MovieEnumCategory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
