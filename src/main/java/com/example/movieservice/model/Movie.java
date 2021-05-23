@@ -9,13 +9,13 @@ import javax.persistence.*;
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID;
+    private Long id;
     private String name;
     @Enumerated(EnumType.STRING)
     private MovieEnumCategory category;
 
-    public Movie(Long ID, String name, MovieEnumCategory category) {
-        this.ID = ID;
+    public Movie(Long id, String name, MovieEnumCategory category) {
+        this.id = id;
         this.name = name;
         this.category = category;
     }
@@ -25,11 +25,11 @@ public class Movie {
     }
 
     public Long getID() {
-        return ID;
+        return id;
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public void setID(Long id) {
+        this.id = id;
     }
 
     public String getName() {
