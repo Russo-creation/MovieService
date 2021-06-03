@@ -14,7 +14,7 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     List<Movie> findAll();
 
     @Override
-    Movie save(Movie movie);
+    <S extends Movie> S save(S entity);
 
     @Override
     void deleteById(Long aLong);
