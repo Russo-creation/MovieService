@@ -49,6 +49,13 @@ public class MovieService {
         }
     }
 
-
-
+    public void updateByIdAvailable (Long id) {
+        try{
+            Movie movieFromDb = movieRepository.findById(id).orElseThrow(MovieNotFoundException::new);
+            movieFromDb.setIsAvailable(true);
+            movieRepository.save(movieFromDb);
+        } catch (Exception e){
+            System.out.println(e);
+        }
+    }
 }

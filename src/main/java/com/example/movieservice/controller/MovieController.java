@@ -45,4 +45,12 @@ public class MovieController {
         movieService.updateById(id, movie);
         return ResponseEntity.noContent().build();
     }
+
+    //////////////////
+
+    @PutMapping("/available/{id}")
+    public ResponseEntity<Movie> setIsAvailable(@PathVariable Long id) {
+        movieService.updateByIdAvailable(id);
+        return ResponseEntity.noContent().build();
+    }
 }
