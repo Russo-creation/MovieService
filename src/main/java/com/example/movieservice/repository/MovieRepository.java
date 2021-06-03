@@ -7,9 +7,15 @@ import java.util.List;
 import java.util.Optional;
 
 public interface MovieRepository extends JpaRepository<Movie, Long> {
-//   List<Movie> findById(Movie movie);
-
     @Override
     Optional<Movie> findById(Long aLong);
 
+    @Override
+    List<Movie> findAll();
+
+    @Override
+    Movie save(Movie movie);
+
+    @Override
+    void deleteById(Long aLong);
 }
