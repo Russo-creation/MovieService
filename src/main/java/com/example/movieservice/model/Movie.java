@@ -14,11 +14,11 @@ public class Movie {
     @Enumerated(EnumType.STRING)
     private MovieEnumCategory category;
 
-    public Movie(Long id, String name, MovieEnumCategory category) {
-        this.id = id;
-        this.name = name;
-        this.category = category;
-    }
+//    public Movie(Long id, String name, MovieEnumCategory category) {
+//        this.id = id;
+//        this.name = name;
+//        this.category = category;
+//    }
 
     public Movie() {
 

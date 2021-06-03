@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/movie")
@@ -16,39 +17,37 @@ public class MovieController {
 
     public MovieController(MovieService movieService) {
         this.movieService = movieService;
-        movieService.createMovieList();
     }
 
     // 3b
-    @GetMapping
-    public ResponseEntity<List<Movie>> getMovieList(){
-        return ResponseEntity.ok(movieService.listMovies());
-    }
+//    @GetMapping
+//    public ResponseEntity<List<Movie>> getMovieList(){
+//        return ResponseEntity.ok(movieService());
+//    }
 
     // 3c
-    @GetMapping("/{movieId}")
-    public ResponseEntity<Movie> getMovieById(@PathVariable Integer movieId) {
-        Movie movie = new Movie(4L, "Matrix", MovieEnumCategory.SCI_FI);
-        return ResponseEntity.ok(movie);
+    @GetMapping("/{id}")
+    public ResponseEntity<Movie> getMovieById(@PathVariable Long id) {
+        return ResponseEntity.ok(movieService.findById(id));
     }
 
-    // 3d
-    @PostMapping
-    public ResponseEntity<Movie> addMovie(@RequestBody Movie newMovie) {
-        Movie movie = new Movie(4L, "Matrix", MovieEnumCategory.SCI_FI);
-        return ResponseEntity.ok(movie);
-    }
-
-    // 3e
-    @PutMapping("/{movieId}")
-    public ResponseEntity<Movie> editMovie(@PathVariable Integer movieId) {
-        Movie movie = new Movie(4L, "Matrix", MovieEnumCategory.SCI_FI);
-        return ResponseEntity.ok(movie);
-    }
-
-    // 3f
-    @DeleteMapping("/{movieId}")
-    public ResponseEntity<Void> deleteMovie(@PathVariable Integer movieId) {
-        return ResponseEntity.ok().build();
-    }
+//    // 3d
+//    @PostMapping
+//    public ResponseEntity<Movie> addMovie(@RequestBody Movie newMovie) {
+//        Movie movie = new Movie(4L, "Matrix", MovieEnumCategory.SCI_FI);
+//        return ResponseEntity.ok(movie);
+//    }
+//
+//    // 3e
+//    @PutMapping("/{movieId}")
+//    public ResponseEntity<Movie> editMovie(@PathVariable Integer movieId) {
+//        Movie movie = new Movie(4L, "Matrix", MovieEnumCategory.SCI_FI);
+//        return ResponseEntity.ok(movie);
+//    }
+//
+//    // 3f
+//    @DeleteMapping("/{movieId}")
+//    public ResponseEntity<Void> deleteMovie(@PathVariable Integer movieId) {
+//        return ResponseEntity.ok().build();
+//    }
 }
