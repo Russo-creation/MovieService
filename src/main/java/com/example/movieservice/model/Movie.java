@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.*;
 
 @Entity
-@Table(name="movie")
 public class Movie {
 
     @Id
@@ -16,7 +15,6 @@ public class Movie {
     @Enumerated(EnumType.STRING)
     private MovieEnumCategory category;
 
-    @Column(name="isAvailable")
     private Boolean isAvailable;
 
 //    public Movie(Long id, String name, MovieEnumCategory category) {

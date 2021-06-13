@@ -49,10 +49,10 @@ public class MovieService {
         }
     }
 
-    public void updateByIdAvailable (Long id) {
+    public void updateByIdAvailable (Long id, Boolean availability) {
         try{
             Movie movieFromDb = movieRepository.findById(id).orElseThrow(MovieNotFoundException::new);
-            movieFromDb.setIsAvailable(true);
+            movieFromDb.setIsAvailable(availability);
             movieRepository.save(movieFromDb);
         } catch (Exception e){
             System.out.println(e);
